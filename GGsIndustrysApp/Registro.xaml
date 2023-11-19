@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GGsIndustrysApp.Registro"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                Padding="20"
+                BackgroundColor="#2196F3"
+                CornerRadius="0">
+                <Label
+                    FontSize="36"
+                    HorizontalTextAlignment="Center"
+                    Text="Registrate"
+                    TextColor="White" />
+            </Frame>
+            <Label FontSize="22" Text="Email" />
+            <Entry
+                x:Name="txtEmailReg"
+                FontSize="14"
+                Keyboard="Email"
+                Placeholder="Example@gmail.com" />
+            <Label FontSize="22" Text="Contraseña" />
+            <Entry
+                x:Name="txtContraReg"
+                FontSize="14"
+                IsPassword="True"
+                Placeholder="*******" />
+            <Label FontSize="22" Text="Nombre Completo" />
+            <Entry
+                x:Name="txtNombreReg"
+                FontSize="14"
+                Placeholder="Nombre completo" />
+            <Label FontSize="22" Text="Edad" />
+            <Entry
+                x:Name="txtEdadReg"
+                FontSize="14"
+                Keyboard="Numeric"
+                Placeholder="45" />
+
+            <Button
+                x:Name="btn_Guardar"
+                Clicked="Button_Clicked"
+                Text="Registrar" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

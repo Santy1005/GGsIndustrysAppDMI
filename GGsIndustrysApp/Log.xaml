@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GGsIndustrysApp.Log"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                Padding="20"
+                BackgroundColor="#2196F3"
+                CornerRadius="0">
+                <Label
+                    FontSize="36"
+                    HorizontalTextAlignment="Center"
+                    Text="Login"
+                    TextColor="White" />
+            </Frame>
+            <Entry
+                x:Name="txtCorreo"
+                Keyboard="Email"
+                Placeholder="Correo" />
+            <Entry
+                x:Name="txtPwd"
+                IsPassword="True"
+                Placeholder="Password" />
+            <Button Clicked="btnIngresar_Clicked" Text="Ingresar" />
+            <Button Clicked="Button_Clicked_Registrar" Text="Registrarse" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

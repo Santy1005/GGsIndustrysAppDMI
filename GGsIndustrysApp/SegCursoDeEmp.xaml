@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GGsIndustrysApp.SegCursoDeEmp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                Padding="10"
+                BackgroundColor="#2196F3"
+                CornerRadius="0">
+                <Label
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    Text="Seguimiento Curso del Empleado"
+                    TextColor="White" />
+            </Frame>
+
+
+            <Entry x:Name="txtIdSeg" IsVisible="False" />
+
+            <Picker
+                x:Name="txtNombreEmp"
+                Title="Nombre del Empleado"
+                ItemDisplayBinding="{Binding FullName}" />
+
+            <Picker
+                x:Name="txtNombreCurso"
+                Title="Curso"
+                ItemDisplayBinding="{Binding Cursos}" />
+            <Entry x:Name="txtLugCurso" Placeholder="Lugar del Curso" />
+            <DatePicker x:Name="txtFecha" Format="dd-MMM-yyyy" />
+            <TimePicker x:Name="txtHora" />
+            <Picker
+                x:Name="txtEstatus"
+                Title="Estatus"
+                SelectedIndexChanged="txtEstatus_SelectedIndexChanged" />
+            <Entry
+                x:Name="txtCal"
+                Keyboard="Numeric"
+                Placeholder="Calificacion" />
+
+            <Button
+                x:Name="txtGuardaSeg"
+                Clicked="txtGuardaSeg_Clicked"
+                Text="Guardar" />
+            <Button
+                x:Name="txtUpdate"
+                Clicked="txtUpdate_Clicked"
+                IsVisible="false"
+                Text="Actualizar" />
+
+            <Button
+                x:Name="btnDel"
+                Clicked="btnDel_Clicked"
+                IsVisible="false"
+                Text="Borrar" />
+
+
+            <ListView x:Name="lsSeguimiento" ItemSelected="lstSeguimientos_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+
+
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding IdSeg}"
+                                    TextColor="White" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding FullName}"
+                                    TextColor="Green" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="3"
+                                    Text="{Binding Calificacion}"
+                                    TextColor="Yellow" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding Estatus}"
+                                    TextColor="Yellow" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

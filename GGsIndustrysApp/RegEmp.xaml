@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GGsIndustrysApp.RegEmp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                Padding="10"
+                BackgroundColor="#2196F3"
+                CornerRadius="0">
+                <Label
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    Text="Registro de Empleado"
+                    TextColor="White" />
+            </Frame>
+
+            <Entry x:Name="txtIdEmp" IsVisible="False" />
+            <Entry x:Name="txtName" Placeholder="Nombre de Empleado" />
+            <Entry x:Name="txtDireccion" Placeholder="Direccion" />
+            <Entry
+                x:Name="txtTel"
+                Keyboard="Numeric"
+                Placeholder="N°. De Telefono" />
+            <Entry
+                x:Name="txtEdad"
+                Keyboard="Numeric"
+                Placeholder="Edad" />
+            <Entry x:Name="txtCurp" Placeholder="CURP" />
+            <Entry x:Name="txtTipoEmp" Placeholder="Tipo de Empleado" />
+
+            <Button
+                x:Name="btnGuardar"
+                Clicked="Button_Save_Clicked"
+                Text="Registrar" />
+
+            <Button
+                x:Name="btnActualizar"
+                Clicked="Button_Actualizar_Clicked"
+                IsVisible="False"
+                Text="Actualizar" />
+
+            <Button
+                x:Name="btnDelete"
+                Clicked="Button_Delete_Clicked"
+                IsVisible="False"
+                Text="Eliminar" />
+
+            <ListView x:Name="lsEmpleado" ItemSelected="lstEmpleados_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+
+
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding IdEmp}"
+                                    TextColor="Blue" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding Nombre}"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding Direccion}"
+                                    TextColor="Gray" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="3"
+                                    Text="{Binding Edad}"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    Text="{Binding Telefono}"
+                                    TextColor="Green" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    Text="{Binding Curp}"
+                                    TextColor="DarkRed" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="{Binding TipoEmp}"
+                                    TextColor="OrangeRed" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

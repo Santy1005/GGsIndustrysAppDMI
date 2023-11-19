@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GGsIndustrysApp.RegCurso"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                Padding="10"
+                BackgroundColor="#2196F3"
+                CornerRadius="0">
+                <Label
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    Text="Registro de Curso"
+                    TextColor="White" />
+            </Frame>
+
+
+            <Entry x:Name="txtIdCurso" IsVisible="False" />
+            <Entry x:Name="txtNameCurso" Placeholder="Nombre del Curso" />
+            <Entry x:Name="txtTipoCurso" Placeholder="Tipo del Curso" />
+            <Entry x:Name="txtDescripcion" Placeholder="Descripcion del Curso" />
+            <Entry x:Name="txtHoras" Placeholder="Horas del Curso" />
+
+            <Button
+                x:Name="btnGuardar"
+                Clicked="Button_Save_Clicked"
+                Text="Registrar" />
+
+            <Button
+                x:Name="btnActualizar"
+                Clicked="Button_Actualizar_Clicked"
+                IsVisible="False"
+                Text="Actualizar" />
+
+            <Button
+                x:Name="btnDelete"
+                Clicked="Button_Delete_Clicked"
+                IsVisible="False"
+                Text="Eliminar" />
+
+            <ListView x:Name="lsCurso" ItemSelected="lstCursos_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+
+
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding IdCurso}"
+                                    TextColor="Blue" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding Nombre}"
+                                    TextColor="Gray" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="{Binding Tipo}"
+                                    TextColor="Gray" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    Text="{Binding Descripcion}"
+                                    TextColor="Black" />
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="4"
+                                    Text="{Binding Tiempo}"
+                                    TextColor="Black" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
